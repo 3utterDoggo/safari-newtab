@@ -1,90 +1,137 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Progate</title>
-  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" href="stylesheet.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>new tab</title>
+<style>
+    body {
+        background-color: #1e1c1c;
+        color: #f0f8ff;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        margin: 0;
+        padding: 2em;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center; /* ← 縦方向も中央寄せに */
+        min-height: 100vh; /* ← 全画面高さを確保 */
+        box-sizing: border-box;
+    }
+
+    /* 検索ボックス */
+    .search {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 3em;
+    }
+    .search input[type="text"] {
+        width: 40vw;
+        max-width: 480px;
+        min-width: 200px;
+        padding: 8px 12px;
+        font-size: 1em;
+        border: 1px solid #555;
+        border-radius: 0;
+        background-color: #212121;
+        color: #f0f8ff;
+        outline: none;
+    }
+    .search input[type="text"]::placeholder {
+        color: #777;
+    }
+
+    /* ブックマーク群 */
+    .bookmarks {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start; /* 左寄せ */
+        align-items: flex-start;
+        width: 80%;
+        max-width: 900px;
+        gap: 1em;
+        margin: 1em;
+    }
+    .bookmark {
+        border: 1px solid #555;
+        padding: 0.5em 1em;
+        width: 10em;
+        text-align: left;
+        text-decoration: none;
+        color: #f0f8ff;
+        background-color: #212121;
+        transition: background 0.15s, color 0.15s;
+    }
+    .bookmark:hover {
+        background-color: #111;
+        color: #fff;
+    }
+    .bookmark .title {
+        font-size: 1em;
+        font-weight: 600;
+        margin-bottom: 0.2em;
+    }
+    .bookmark .url {
+        font-size: 0.75em;
+        color: #999;
+    }
+</style>
 </head>
 <body>
-  <header>
-    <div class="container">
-      <div class="header-left">
-        <img class="logo" src="https://prog-8.com/images/html/advanced/main_logo.png">
-      </div>
-      <span class="fa fa-bars menu-icon"></span>
-      <div class="header-right">
-        <a href="#">レッスン</a>
-        <a href="#">新規登録</a>
-        <a href="#" class="login">ログイン</a>
-      </div>
-    </div>
-  </header>
-  <div class="top-wrapper">
-    <div class="container">
-      <h1>LEARN TO CODE.<br>LEARN TO BE CREATIVE.</h1>
-      <p>Progateはオンラインプログラミング学習サービスです。<br>初心者にもやさしいスライドとレッスンで、ウェブサービスを作りながらプログラミングを学んでいきましょう。</p>
-      <div class="btn-wrapper">
-        <a href="#" class="btn signup">新規登録はこちら</a>
-        <p>or</p>
-        <a href="#" class="btn facebook"><span class="fa fa-facebook"></span>Facebookで登録</a>
-        <a href="#" class="btn twitter"><span class="fa fa-twitter"></span>Twitterで登録</a>
-      </div>
-    </div>
-  </div>
-  <div class="lesson-wrapper">
-    <div class="container">
-      <div class="heading">
-        <h2>Learn Where to Get Started!</h2>
-      </div>
-      <div class="lessons">
-        <div class="lesson">
-          <div class="lesson-icon">
-            <img src="https://prog-8.com/images/html/advanced/html.png">
-            <p>HTML & CSS</p>
-          </div>
-          <p class="text-contents">ウェブページの作成に使用される言語です。HTMLとCSSを組み合わせることで、静的なページを作り上げることができます。</p>
-        </div>
-        <div class="lesson">
-          <div class="lesson-icon">
-            <img src="https://prog-8.com/images/html/advanced/jQuery.png">
-            <p>jQuery</p>
-          </div>
-          <p class="text-contents">素敵な動きを手軽に実装できるJavaScriptライブラリです。 アニメーション効果をつけたり、Ajax（エイジャックス）を使って外部ファイルを読み込んだりと色々なことができます。</p>
-        </div>
-        <div class="lesson">
-          <div class="lesson-icon">
-            <img src="https://prog-8.com/images/html/advanced/ruby.png">
-            <p>Ruby</p>
-          </div>
-          <p class="text-contents">オープンソースの動的なプログラミング言語で、 シンプルさと高い生産性を備えています。大きなWebアプリケーションから小さな日用ツールまで、さまざまなソフトウェアを作ることができます。</p>
-        </div>
-        <div class="lesson">
-          <div class="lesson-icon">
-            <img src="https://prog-8.com/images/html/advanced/php.png">
-            <p>PHP</p>
-          </div>
-          <p class="text-contents">HTMLだけではページの内容を変えることはできません。PHPはHTMLにプログラムを埋め込み、それを可能にします。</p>
-        </div>
-      </div>
-      <div class="clear"></div>
-    </div>
-  </div>
-  <div class="message-wrapper">
-    <div class="container">
-      <div class="heading">
-        <h2>さぁ、あなたもProgateでプログラミングを学んでみませんか?</h2>
-        <h3>Let's learn to code, learn to be creative!</h3>
-      </div>
-      <span class="btn message">さっそく開発する</span>
-    </div>
-  </div>
-  <footer>
-    <div class="container">
-      <img src="https://prog-8.com/images/html/advanced/footer_logo.png">
-      <p>Learn to Code, Learn to be Creative.</p>
-    </div>
-  </footer>
+
+<div class="search">
+    <form action="https://www.google.com/search" method="get" target="_blank">
+        <input type="text" name="q" placeholder="Search Google">
+    </form>
+</div>
+
+<div class="bookmarks">
+    <a class="bookmark" href="https://mail.google.com/mail/u/0/#inbox">
+        <div class="title">Gmail</div>
+        <div class="url">gmail.com</div>
+    </a>
+    <a class="bookmark" href="https://drive.google.com/drive/u/0/my-drive">
+        <div class="title">Drive</div>
+        <div class="url">drive.google.com</div>
+    </a>
+    <a class="bookmark" href="https://kmulasweb.kmu.ac.jp/webclass/">
+        <div class="title">KMULAS</div>
+        <div class="url">kmulasweb.kmu.ac.jp</div>
+    </a>
+    <a class="bookmark" href="https://mec-itutor.jp/rpv/">
+        <div class="title">itutor</div>
+        <div class="url">mec-itutor.jp</div>
+    </a>
+    <a class="bookmark" href="https://study.mecnet.jp/users/login">
+        <div class="title">MEC Net.</div>
+        <div class="url">study.mecnet.jp</div>
+    </a>
+    <a class="bookmark" href="https://my.ptsc.jp/gomec/seito_login/">
+        <div class="title">mec mypage</div>
+        <div class="url">my.ptsc.jp/gomec</div>
+    </a>
+    <a class="bookmark" href="https://qb.medilink-study.com/MyPage">
+        <div class="title">QB online</div>
+        <div class="url">qb.medilink-study.com</div>
+    </a>
+    <a class="bookmark" href="https://input.medilink-study.com/">
+        <div class="title">input</div>
+        <div class="url">input.medilink-study.com</div>
+    </a>
+    <a class="bookmark" href="http://homebridge.local/">
+        <div class="title">homebridge</div>
+        <div class="url">homebridge.local</div>
+    </a>
+    <a class="bookmark" href="http://archive.org/web/web.php">
+        <div class="title">Wayback Machine</div>
+        <div class="url">archive.org</div>
+    </a>
+    <a class="bookmark" href="https://www.codogue.com/asciitree">
+        <div class="title">Ascii Tree</div>
+        <div class="url">www.codogue.com/asciitree</div>
+    </a>
+</div>
+
 </body>
 </html>
