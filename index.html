@@ -117,8 +117,8 @@
       }
 
       .bookmark .url {
-        font-size: 0.75em;
-        color: #999;
+        font-size: 0.7em;
+        color: #494949;
       }
     </style>
   </head>
@@ -128,7 +128,6 @@
       <form
         action="https://www.google.com/search"
         method="get"
-        target="_blank"
         id="searchForm"
       >
         <input
@@ -149,15 +148,20 @@
         <div class="url">gmail.com</div>
       </a>
       <a class="bookmark" href="https://drive.google.com/drive/u/0/my-drive">
-        <div class="title">Drive</div>
+        <div class="title">Google Drive</div>
         <div class="url">drive.google.com</div>
       </a>
-      <a class="bookmark" href="https://kmulasweb.kmu.ac.jp/webclass/">
-        <div class="title">KMULAS</div>
-        <div class="url">kmulasweb.kmu.ac.jp</div>
+      <a class="bookmark" href="http://homebridge.local/">
+        <div class="title">homebridge</div>
+        <div class="url">homebridge.local</div>
       </a>
+      <a class="bookmark" href="https://www.codogue.com/asciitree">
+        <div class="title">Ascii Tree</div>
+        <div class="url">www.codogue.com/asciitree</div>
+      </a>
+
       <a class="bookmark" href="https://mec-itutor.jp/rpv/">
-        <div class="title">itutor</div>
+        <div class="title">MEC iTutor</div>
         <div class="url">mec-itutor.jp</div>
       </a>
       <a class="bookmark" href="https://study.mecnet.jp/users/login">
@@ -165,28 +169,29 @@
         <div class="url">study.mecnet.jp</div>
       </a>
       <a class="bookmark" href="https://my.ptsc.jp/gomec/seito_login/">
-        <div class="title">mec mypage</div>
+        <div class="title">MEC mypage</div>
         <div class="url">my.ptsc.jp/gomec</div>
       </a>
+      <a class="bookmark" href="https://kmulasweb.kmu.ac.jp/webclass/">
+        <div class="title">KMULAS</div>
+        <div class="url">kmulasweb.kmu.ac.jp</div>
+      </a>
+
       <a class="bookmark" href="https://qb.medilink-study.com/MyPage">
         <div class="title">QB online</div>
         <div class="url">qb.medilink-study.com</div>
+      </a>
+      <a class="bookmark" href="https://lec.medilink-study.com/front/top/myCourse">
+        <div class="title">mediLink</div>
+        <div class="url">lec.medilink-study.com</div>
       </a>
       <a class="bookmark" href="https://input.medilink-study.com/">
         <div class="title">input</div>
         <div class="url">input.medilink-study.com</div>
       </a>
-      <a class="bookmark" href="http://homebridge.local/">
-        <div class="title">homebridge</div>
-        <div class="url">homebridge.local</div>
-      </a>
       <a class="bookmark" href="http://archive.org/web/web.php">
         <div class="title">Wayback Machine</div>
         <div class="url">archive.org</div>
-      </a>
-      <a class="bookmark" href="https://www.codogue.com/asciitree">
-        <div class="title">Ascii Tree</div>
-        <div class="url">www.codogue.com/asciitree</div>
       </a>
     </div>
     <script>
@@ -202,8 +207,8 @@
         }
 
         const res = await fetch(
-  `https://corsproxy.io/?https://suggestqueries.google.com/complete/search?client=firefox&q=${encodeURIComponent(query)}`
-);
+          `https://corsproxy.io/?https://suggestqueries.google.com/complete/search?client=firefox&q=${encodeURIComponent(query)}`
+        );
         const data = await res.json();
         const suggestions = data[1];
         suggestionsBox.innerHTML = suggestions
