@@ -202,10 +202,8 @@
         }
 
         const res = await fetch(
-          `https://suggestqueries.google.com/complete/search?client=firefox&q=${encodeURIComponent(
-            query
-          )}`
-        );
+  `https://corsproxy.io/?https://suggestqueries.google.com/complete/search?client=firefox&q=${encodeURIComponent(query)}`
+);
         const data = await res.json();
         const suggestions = data[1];
         suggestionsBox.innerHTML = suggestions
